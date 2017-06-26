@@ -50,21 +50,43 @@ public class MainActivity extends AppCompatActivity {
                 .withHeader(R.layout.drawer_header)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_free_play),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIdentifier(2),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_free_play).withIdentifier(2),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIdentifier(3),
 
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_help),
                         new DividerDrawerItem(),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIdentifier(1),
-                        new PrimaryDrawerItem().withName("Информация").withIdentifier(3)
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIdentifier(4),
+                        new PrimaryDrawerItem().withName("Информация").withIdentifier(5)
                 )
 
                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                    @Override
                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
-                       Toast.makeText(MainActivity.this, "Clicked!", Toast.LENGTH_SHORT).show();
+                       if (drawerItem.getIdentifier() == 2 ){
+
+                           // Открыть каталог товаров
+                           Intent intent = new Intent(MainActivity.this, catalog.class);
+                           startActivity(intent);
+                       }
+
+                       if (drawerItem.getIdentifier() == 3) {
+
+                           //Открыть козрину
+                           Intent intent = new Intent(MainActivity.this, BucketActivity.class);
+                           startActivity(intent);
+                       }
+
+                       if (drawerItem.getIdentifier() == 4){
+
+                           //Открыть контакты
+                       }
+
+                        if (drawerItem.getIdentifier() == 5){
+
+                            //Показать информацию
+                        }
                        return false;
                    }
                })
