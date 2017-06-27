@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 import com.mikepenz.materialdrawer.Drawer;
@@ -13,18 +15,18 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-public class BucketActivity extends AppCompatActivity {
+public class Contacts extends AppCompatActivity {
 
-    private Drawer result;
+    private Drawer result = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bucket);
+        setContentView(R.layout.activity_contacts);
 
-        setTitle("Корзина");
+        setTitle("Наши контакты");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar3);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar7);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -50,27 +52,33 @@ public class BucketActivity extends AppCompatActivity {
 
                         if (drawerItem.getIdentifier() == 1) {
 
-                            Intent intent = new Intent(BucketActivity.this, MainActivity.class);
+                            Intent intent = new Intent(Contacts.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+
+                        if (drawerItem.getIdentifier() == 3) {
+
+                            //Открыть козрину
+                            Intent intent = new Intent(Contacts.this, BucketActivity.class);
                             startActivity(intent);
                         }
 
                         if (drawerItem.getIdentifier() == 4){
 
-                           Intent intent = new Intent(BucketActivity.this, Contacts.class);
-                            startActivity(intent);
+                            //Открыть контакты
                         }
 
                         if (drawerItem.getIdentifier() == 5){
 
                             //Показать информацию
-                            Intent intent = new Intent(BucketActivity.this, Info.class);
+                            Intent intent = new Intent(Contacts.this, Info.class);
                             startActivity(intent);
                         }
 
                         if (drawerItem.getIdentifier() == 6) {
 
-                            Intent intet = new Intent(BucketActivity.this, Help.class);
-                            startActivity(intet);
+                            Intent intent = new Intent(Contacts.this, Help.class);
+                            startActivity(intent);
                         }
                         return false;
                     }

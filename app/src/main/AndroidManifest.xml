@@ -16,9 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".catalog" />
         <activity android:name=".BucketActivity" />
-        <activity android:name=".Help"></activity>
+        <activity android:name=".Help" />
+        <activity android:name=".Contacts" />
+        <activity android:name=".Vapes" />
+        <activity android:name=".Info" />
+        <activity android:name=".Loading"></activity>
     </application>
 
 </manifest>

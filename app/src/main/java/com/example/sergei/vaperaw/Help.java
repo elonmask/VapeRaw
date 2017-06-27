@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 import com.mikepenz.materialdrawer.Drawer;
@@ -22,6 +24,8 @@ public class Help extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
+        setTitle("Помощь");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar6);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -33,7 +37,6 @@ public class Help extends AppCompatActivity {
                 .withHeader(R.layout.drawer_header)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_free_play).withIdentifier(2),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIdentifier(3),
 
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
@@ -54,13 +57,6 @@ public class Help extends AppCompatActivity {
 
                         }
 
-                        if (drawerItem.getIdentifier() == 2 ){
-
-                            // Открыть каталог товаров
-                            Intent intent = new Intent(Help.this, catalog.class);
-                            startActivity(intent);
-                        }
-
                         if (drawerItem.getIdentifier() == 3) {
 
                             //Открыть козрину
@@ -71,15 +67,28 @@ public class Help extends AppCompatActivity {
                         if (drawerItem.getIdentifier() == 4){
 
                             //Открыть контакты
+                            Intent intent = new Intent(Help.this, Contacts.class);
+                            startActivity(intent);
                         }
 
                         if (drawerItem.getIdentifier() == 5){
 
                             //Показать информацию
+                            Intent intent = new Intent(Help.this, Info.class);
+                            startActivity(intent);
+
                         }
                         return false;
                     }
                 })
                 .build();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+
+        return true;
     }
 }

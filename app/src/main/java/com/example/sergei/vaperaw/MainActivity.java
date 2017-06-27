@@ -15,6 +15,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.Drawer;
@@ -25,12 +28,16 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import org.w3c.dom.Text;
+
 import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private Drawer result = null;
+
+    Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("Главная");
 
+        btn1 = (Button) findViewById(R.id.button2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -50,11 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 .withHeader(R.layout.drawer_header)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_free_play).withIdentifier(2),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIdentifier(3),
 
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_help),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_help).withIdentifier(6),
                         new DividerDrawerItem(),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIdentifier(4),
                         new PrimaryDrawerItem().withName("Информация").withIdentifier(5)
@@ -63,13 +70,6 @@ public class MainActivity extends AppCompatActivity {
                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                    @Override
                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-
-                       if (drawerItem.getIdentifier() == 2 ){
-
-                           // Открыть каталог товаров
-                           Intent intent = new Intent(MainActivity.this, catalog.class);
-                           startActivity(intent);
-                       }
 
                        if (drawerItem.getIdentifier() == 3) {
 
@@ -80,17 +80,35 @@ public class MainActivity extends AppCompatActivity {
 
                        if (drawerItem.getIdentifier() == 4){
 
-                           //Открыть контакты
+                           Intent intent = new Intent(MainActivity.this, Contacts.class);
+                           startActivity(intent);
                        }
 
                         if (drawerItem.getIdentifier() == 5){
 
                             //Показать информацию
+                            Intent intent = new Intent(MainActivity.this, Info.class);
+                            startActivity(intent);
+                        }
+
+                        if (drawerItem.getIdentifier() == 6) {
+
+                            Intent intent = new Intent(MainActivity.this, Help.class);
+                            startActivity(intent);
                         }
                        return false;
                    }
                })
                 .build();
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Loading.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

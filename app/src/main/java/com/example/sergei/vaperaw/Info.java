@@ -13,18 +13,18 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-public class BucketActivity extends AppCompatActivity {
+public class Info extends AppCompatActivity {
 
-    private Drawer result;
+    private Drawer result = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bucket);
+        setContentView(R.layout.activity_info);
 
-        setTitle("Корзина");
+        setTitle("Информация");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar3);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar9);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -48,29 +48,28 @@ public class BucketActivity extends AppCompatActivity {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
-                        if (drawerItem.getIdentifier() == 1) {
+                        if (drawerItem.getIdentifier() == 3) {
 
-                            Intent intent = new Intent(BucketActivity.this, MainActivity.class);
+                            //Открыть козрину
+                            Intent intent = new Intent(Info.this, BucketActivity.class);
                             startActivity(intent);
                         }
 
                         if (drawerItem.getIdentifier() == 4){
 
-                           Intent intent = new Intent(BucketActivity.this, Contacts.class);
+                            Intent intent = new Intent(Info.this, Contacts.class);
                             startActivity(intent);
                         }
 
                         if (drawerItem.getIdentifier() == 5){
 
                             //Показать информацию
-                            Intent intent = new Intent(BucketActivity.this, Info.class);
-                            startActivity(intent);
                         }
 
                         if (drawerItem.getIdentifier() == 6) {
 
-                            Intent intet = new Intent(BucketActivity.this, Help.class);
-                            startActivity(intet);
+                            Intent intent = new Intent(Info.this, Help.class);
+                            startActivity(intent);
                         }
                         return false;
                     }
