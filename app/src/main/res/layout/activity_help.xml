@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/md_black_1000"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:padding="15dp"
             android:text="Интернет-магазин авторских жидкостей для электронных сигарет и аксессуаров Vape Shop Kiev создан с целью продвинуть электронное парение в Украине на новый уровень и дать возможность купить максимально качественные продукты, произведенные из лучших компонентов, проверенных на себе за годы опыта.
 
