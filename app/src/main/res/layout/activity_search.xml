@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sergei.vaperaw.BucketActivity">
+    android:background="@color/grey"
+    tools:context="com.example.sergei.vaperaw.Search">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar3"
+        android:id="@+id/toolbar11"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -20,13 +21,23 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="300dp"
-        android:text="Тут пусто("
-        android:textColor="@color/colorPrimary"
-        android:textSize="20dp"/>
+        android:indeterminate="true"
+        android:layout_below="@id/toolbar11"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar11"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Найти..." />
 
 </RelativeLayout>

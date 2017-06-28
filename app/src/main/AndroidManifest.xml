@@ -21,7 +21,8 @@
         <activity android:name=".Contacts" />
         <activity android:name=".Vapes" />
         <activity android:name=".Info" />
-        <activity android:name=".Loading"></activity>
+        <activity android:name=".Loading" />
+        <activity android:name=".Search"></activity>
     </application>
 
 </manifest>
