@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
+import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
@@ -24,7 +26,7 @@ public class Help extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
-        setTitle("Помощь");
+        setTitle("О нас");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar6);
         setSupportActionBar(toolbar);
@@ -36,14 +38,14 @@ public class Help extends AppCompatActivity {
                 .withActionBarDrawerToggle(true)
                 .withHeader(R.layout.drawer_header)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIdentifier(3),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIcon(FontAwesome.Icon.faw_bitbucket).withIdentifier(3),
 
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_help),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_question),
                         new DividerDrawerItem(),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIdentifier(4),
-                        new PrimaryDrawerItem().withName("Информация").withIdentifier(5)
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(FontAwesome.Icon.faw_phone).withIdentifier(4),
+                        new PrimaryDrawerItem().withName("Информация").withIcon(FontAwesome.Icon.faw_info).withIdentifier(5)
                 )
 
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -90,5 +92,28 @@ public class Help extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
 
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.search:
+
+                Intent intent = new Intent(Help.this, Search.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.basket:
+
+                Intent intent1 = new Intent(Help.this, BucketActivity.class);
+                startActivity(intent1);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 }

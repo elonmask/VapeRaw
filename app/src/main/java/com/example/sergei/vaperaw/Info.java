@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
@@ -49,14 +50,14 @@ public class Info extends AppCompatActivity {
                 .withActionBarDrawerToggle(true)
                 .withHeader(R.layout.drawer_header)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIdentifier(3),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIcon(FontAwesome.Icon.faw_bitbucket).withIdentifier(3),
 
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_help).withIdentifier(6),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_question).withIdentifier(6),
                         new DividerDrawerItem(),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIdentifier(4),
-                        new PrimaryDrawerItem().withName("Информация").withIdentifier(5)
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(FontAwesome.Icon.faw_phone).withIdentifier(4),
+                        new PrimaryDrawerItem().withName("Информация").withIcon(FontAwesome.Icon.faw_info).withIdentifier(5)
                 )
 
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {

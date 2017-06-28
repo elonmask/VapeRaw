@@ -32,6 +32,13 @@
             android:dividerPadding="22dp"
             android:showDividers="middle">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ff"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"/>
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
@@ -39,8 +46,7 @@
                 android:text="Категории:"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="300dp"/>
+                android:layout_gravity="center" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -226,7 +232,7 @@
                         android:layout_height="45dp"
                         android:text="Купить"
                         android:textAllCaps="false"
-                        android:layout_marginTop="200dp"
+                        android:layout_marginTop="210dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="10dp" />
 
@@ -272,7 +278,7 @@
                         android:layout_height="45dp"
                         android:text="Купить"
                         android:textAllCaps="false"
-                        android:layout_marginTop="200dp"
+                        android:layout_marginTop="210dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="10dp" />
 
@@ -297,15 +303,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:paddingLeft="20dp"
-                        android:text="Alien Baby AL85"
+                        android:text="120Juice — Blue"
                         android:textColor="@color/colorPrimary" />
 
                     <ImageView
                         android:id="@+id/imageView4545"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_marginTop="25dp"
-                        app:srcCompat="@drawable/pico" />
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="10dp"
+                        app:srcCompat="@drawable/lo" />
 
                     <TextView
                         android:id="@+id/textView7"
@@ -314,7 +321,7 @@
                         android:layout_marginTop="180dp"
                         android:paddingBottom="10dp"
                         android:paddingLeft="50dp"
-                        android:text="2,399 грн."
+                        android:text="400 грн."
                         android:textColor="@color/colorPrimary" />
 
                     <Button
@@ -323,7 +330,7 @@
                         android:layout_height="45dp"
                         android:text="Купить"
                         android:textAllCaps="false"
-                        android:layout_marginTop="200dp"
+                        android:layout_marginTop="210dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="10dp" />
 
@@ -343,15 +350,16 @@
                         android:layout_marginTop="15dp"
                         android:paddingLeft="20dp"
                         android:layout_marginRight="15dp"
-                        android:text="Reuleaux RX Mini Kit"
+                        android:text="Boneshaker — Full"
                         android:textColor="@color/colorPrimary" />
 
                     <ImageView
                         android:id="@+id/imageView9"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_marginTop="25dp"
-                        app:srcCompat="@drawable/new_vape" />
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginLeft="15dp"
+                        app:srcCompat="@drawable/fulltrotle" />
 
                     <TextView
                         android:id="@+id/textView10"
@@ -360,7 +368,7 @@
                         android:layout_marginTop="180dp"
                         android:paddingBottom="10dp"
                         android:paddingLeft="50dp"
-                        android:text="2,399 грн."
+                        android:text="170 грн."
                         android:textColor="@color/colorPrimary" />
 
                     <Button
@@ -369,7 +377,7 @@
                         android:layout_height="45dp"
                         android:text="Купить"
                         android:textAllCaps="false"
-                        android:layout_marginTop="200dp"
+                        android:layout_marginTop="210dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="10dp" />
 
@@ -422,15 +430,15 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:paddingLeft="20dp"
-                        android:text="Alien Baby AL85"
+                        android:text="Banana Cranch"
                         android:textColor="@color/colorPrimary" />
 
                     <ImageView
                         android:id="@+id/imageView45"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:layout_marginTop="25dp"
-                        app:srcCompat="@drawable/pico" />
+                        android:layout_marginTop="30dp"
+                        app:srcCompat="@drawable/b" />
 
                     <TextView
                         android:id="@+id/textView72"
@@ -439,7 +447,7 @@
                         android:layout_marginTop="180dp"
                         android:paddingBottom="10dp"
                         android:paddingLeft="50dp"
-                        android:text="2,399 грн."
+                        android:text="100 грн."
                         android:textColor="@color/colorPrimary" />
 
                     <Button
@@ -448,7 +456,7 @@
                         android:layout_height="45dp"
                         android:text="Купить"
                         android:textAllCaps="false"
-                        android:layout_marginTop="200dp"
+                        android:layout_marginTop="210dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="10dp" />
 
@@ -468,15 +476,15 @@
                         android:layout_marginTop="15dp"
                         android:paddingLeft="20dp"
                         android:layout_marginRight="15dp"
-                        android:text="Reuleaux RX Mini Kit"
+                        android:text="Oracle"
                         android:textColor="@color/colorPrimary" />
 
                     <ImageView
                         android:id="@+id/imageView98"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:layout_marginTop="25dp"
-                        app:srcCompat="@drawable/new_vape" />
+                        android:layout_marginTop="30dp"
+                        app:srcCompat="@drawable/oracle" />
 
                     <TextView
                         android:id="@+id/textView101"
@@ -485,7 +493,7 @@
                         android:layout_marginTop="180dp"
                         android:paddingBottom="10dp"
                         android:paddingLeft="50dp"
-                        android:text="2,399 грн."
+                        android:text="100 грн."
                         android:textColor="@color/colorPrimary" />
 
                     <Button
@@ -494,7 +502,7 @@
                         android:layout_height="45dp"
                         android:text="Купить"
                         android:textAllCaps="false"
-                        android:layout_marginTop="200dp"
+                        android:layout_marginTop="210dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="10dp" />
 
@@ -547,15 +555,15 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:paddingLeft="20dp"
-                        android:text="Alien Baby AL85"
+                        android:text="Eleaf Ijust"
                         android:textColor="@color/colorPrimary" />
 
                     <ImageView
                         android:id="@+id/imageView445"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:layout_marginTop="25dp"
-                        app:srcCompat="@drawable/pico" />
+                        android:layout_marginTop="35dp"
+                        app:srcCompat="@drawable/ee" />
 
                     <TextView
                         android:id="@+id/textView772"
@@ -564,7 +572,7 @@
                         android:layout_marginTop="180dp"
                         android:paddingBottom="10dp"
                         android:paddingLeft="50dp"
-                        android:text="2,399 грн."
+                        android:text="70 грн."
                         android:textColor="@color/colorPrimary" />
 
                     <Button
@@ -573,7 +581,7 @@
                         android:layout_height="45dp"
                         android:text="Купить"
                         android:textAllCaps="false"
-                        android:layout_marginTop="200dp"
+                        android:layout_marginTop="210dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="10dp" />
 
@@ -593,15 +601,15 @@
                         android:layout_marginTop="15dp"
                         android:paddingLeft="20dp"
                         android:layout_marginRight="15dp"
-                        android:text="Reuleaux RX Mini Kit"
+                        android:text="Smok V8"
                         android:textColor="@color/colorPrimary" />
 
                     <ImageView
                         android:id="@+id/imageView998"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:layout_marginTop="25dp"
-                        app:srcCompat="@drawable/new_vape" />
+                        android:layout_marginTop="35dp"
+                        app:srcCompat="@drawable/ss" />
 
                     <TextView
                         android:id="@+id/textView1901"
@@ -610,7 +618,7 @@
                         android:layout_marginTop="180dp"
                         android:paddingBottom="10dp"
                         android:paddingLeft="50dp"
-                        android:text="2,399 грн."
+                        android:text="450 грн."
                         android:textColor="@color/colorPrimary" />
 
                     <Button
@@ -619,7 +627,7 @@
                         android:layout_height="45dp"
                         android:text="Купить"
                         android:textAllCaps="false"
-                        android:layout_marginTop="200dp"
+                        android:layout_marginTop="210dp"
                         android:layout_marginLeft="35dp"
                         android:layout_marginBottom="10dp" />
 
@@ -628,26 +636,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:text="Ремонт"
-                    android:textAllCaps="false"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <Button
+                    android:id="@+id/hh"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:text="Консультация по телефону"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:background="@color/blue"
                     android:textAllCaps="false"/>
 

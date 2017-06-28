@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sergei.vaperaw.Contacts">
+    tools:context="com.example.sergei.vaperaw.Contacts"
+    android:background="@color/grey">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar7"
@@ -19,5 +20,67 @@
         tools:layout_editor_absoluteX="8dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/rr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Консультация и заказ по телефону"
+        android:textColor="@color/md_black_1000"
+        android:layout_below="@id/toolbar7"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="(044) 537-03-55"
+        android:layout_below="@id/rr"
+        android:textSize="18dp"
+        android:textColor="@color/md_black_1000"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/yy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="(044) 503-86-86"
+        android:layout_below="@id/tt"
+        android:textSize="18dp"
+        android:textColor="@color/md_black_1000"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:padding="30dp"
+        android:text="График работы колл-центра
+с 8:00 до 21:00
+В субботу:с 9:00 до 20:00
+В воскресенье: с 10:00 до 19:00"
+        android:layout_below="@id/yy"
+        android:textSize="18dp"
+        android:textColor="@color/md_black_1000"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Позвонить"
+        android:textAllCaps="false"
+        android:background="@color/blue"
+        android:textSize="18dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 </RelativeLayout>

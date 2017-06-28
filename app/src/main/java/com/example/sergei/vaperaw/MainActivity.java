@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     Button button44;
     Button button334;
     Button button474;
+    Button hh;
 
     TextView textView3333;
     TextView textView333;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         button44 = (Button) findViewById(R.id.button44);
         button334 = (Button) findViewById(R.id.button334);
         button474 = (Button) findViewById(R.id.button474);
+        hh = (Button) findViewById(R.id.hh);
 
         textView333 = (TextView) findViewById(R.id.textView333);
         textView3333 = (TextView) findViewById(R.id.textView3333);
@@ -252,6 +254,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Loading.class);
+                startActivity(intent);
+            }
+        });
+
+        hh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this,Contacts.class);
                 startActivity(intent);
             }
         });

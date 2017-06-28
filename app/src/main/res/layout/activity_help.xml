@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sergei.vaperaw.Help">
+    tools:context="com.example.sergei.vaperaw.Help"
+    android:background="@color/grey">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar6"
@@ -19,5 +20,35 @@
         tools:layout_editor_absoluteX="8dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar6"
+        android:layout_centerHorizontal="true"
+        android:text="Все что нужно знать о нас"
+        android:textSize="20dp"
+        android:textColor="@color/md_black_1000"
+        android:layout_marginTop="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView6"
+        android:layout_margin="15dp"
+        android:background="@color/grey">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_black_1000"
+            android:textSize="18dp"
+            android:padding="15dp"
+            android:text="Интернет-магазин авторских жидкостей для электронных сигарет и аксессуаров Vape Shop Kiev создан с целью продвинуть электронное парение в Украине на новый уровень и дать возможность купить максимально качественные продукты, произведенные из лучших компонентов, проверенных на себе за годы опыта.
+
+Вэйпинг движение в мире набирает обороты и Украина не должна быть исключением. Все больше людей отказываются от сигарет в пользу парения, выбирая менее вредную альтернативу, а с нами - еще и очень вкусную!"/>
+    </RelativeLayout>
+
 
 </RelativeLayout>

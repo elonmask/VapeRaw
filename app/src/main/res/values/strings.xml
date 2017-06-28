@@ -5,7 +5,7 @@
     <string name="drawer_item_free_play">Каталог</string>
     <string name="drawer_item_custom">Корзина</string>
     <string name="drawer_item_settings">Опции</string>
-    <string name="drawer_item_help">Помощь</string>
+    <string name="drawer_item_help">О нас</string>
     <string name="drawer_item_open_source">FAQ</string>
     <string name="drawer_item_contact">Контакты</string>
 </resources>
