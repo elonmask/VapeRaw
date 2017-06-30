@@ -13,7 +13,7 @@
         android:background="@color/colorPrimary"
         android:elevation="4dp"
         android:minHeight="?attr/actionBarSize"
-        android:paddingTop="@dimen/tool_bar_top_padding"
+        android:paddingTop="10dp"
         android:transitionName="actionBar"
         tools:layout_editor_absoluteY="-2dp"
         tools:layout_editor_absoluteX="8dp"
@@ -350,7 +350,7 @@
                         android:layout_marginTop="15dp"
                         android:paddingLeft="20dp"
                         android:layout_marginRight="15dp"
-                        android:text="Boneshaker — Full"
+                        android:text="Boneshaker - FR"
                         android:textColor="@color/colorPrimary" />
 
                     <ImageView

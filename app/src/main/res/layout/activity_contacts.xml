@@ -28,7 +28,7 @@
         android:text="Консультация и заказ по телефону"
         android:textColor="@color/md_black_1000"
         android:layout_below="@id/toolbar7"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"/>
 
@@ -58,13 +58,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:padding="30dp"
+        android:padding="35dp"
         android:text="График работы колл-центра
 с 8:00 до 21:00
 В субботу:с 9:00 до 20:00
 В воскресенье: с 10:00 до 19:00"
         android:layout_below="@id/yy"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:textColor="@color/md_black_1000"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView2" />
