@@ -93,6 +93,12 @@ public class Search extends AppCompatActivity {
                             Intent intent = new Intent(Search.this, Help.class);
                             startActivity(intent);
                         }
+
+                        if (drawerItem.getIdentifier() == 7) {
+
+                            Intent intent = new Intent(Search.this, Cataolg.class);
+                            startActivity(intent);
+                        }
                         return false;
                     }
                 })

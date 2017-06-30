@@ -89,6 +89,12 @@ public class Contacts extends AppCompatActivity {
                             Intent intent = new Intent(Contacts.this, Help.class);
                             startActivity(intent);
                         }
+
+                        if (drawerItem.getIdentifier() == 7) {
+
+                            Intent intent = new Intent(Contacts.this, Cataolg.class);
+                            startActivity(intent);
+                        }
                         return false;
                     }
                 })

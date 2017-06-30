@@ -4,31 +4,28 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-public class Help extends AppCompatActivity {
+public class Cataolg extends AppCompatActivity {
 
-    private Drawer result;
+    private Drawer result = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+        setContentView(R.layout.activity_cataolg);
 
-        setTitle("О нас");
+        setTitle("Каталог");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar6);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar12);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -56,36 +53,33 @@ public class Help extends AppCompatActivity {
 
                         if (drawerItem.getIdentifier() == 1) {
 
-                            Intent intent = new Intent(Help.this, MainActivity.class);
+                            Intent intent = new Intent(Cataolg.this, MainActivity.class);
                             startActivity(intent);
-
                         }
 
                         if (drawerItem.getIdentifier() == 3) {
 
                             //Открыть козрину
-                            Intent intent = new Intent(Help.this, BucketActivity.class);
+                            Intent intent = new Intent(Cataolg.this, BucketActivity.class);
                             startActivity(intent);
                         }
 
                         if (drawerItem.getIdentifier() == 4){
 
-                            //Открыть контакты
-                            Intent intent = new Intent(Help.this, Contacts.class);
+                            Intent intent = new Intent(Cataolg.this, Contacts.class);
                             startActivity(intent);
                         }
 
                         if (drawerItem.getIdentifier() == 5){
 
                             //Показать информацию
-                            Intent intent = new Intent(Help.this, Info.class);
+                            Intent intent = new Intent(Cataolg.this, Info.class);
                             startActivity(intent);
-
                         }
 
-                        if (drawerItem.getIdentifier() == 7) {
+                        if (drawerItem.getIdentifier() == 6) {
 
-                            Intent intent = new Intent(Help.this, Cataolg.class);
+                            Intent intent = new Intent(Cataolg.this, Help.class);
                             startActivity(intent);
                         }
                         return false;
@@ -94,28 +88,9 @@ public class Help extends AppCompatActivity {
                 .build();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+    public void toLoading(View view) {
 
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()){
-
-            case R.id.basket:
-
-                Intent intent1 = new Intent(Help.this, BucketActivity.class);
-                startActivity(intent1);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-
+        Intent intent = new Intent(Cataolg.this, Loading.class);
+        startActivity(intent);
     }
 }

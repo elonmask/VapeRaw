@@ -10,7 +10,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".preLoad"
+        <activity
+            android:name=".preLoad"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +25,9 @@
         <activity android:name=".Vapes" />
         <activity android:name=".Info" />
         <activity android:name=".Loading" />
-        <activity android:name=".Search" >
-        </activity>
-
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".Search"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Cataolg"></activity>
     </application>
 
 </manifest>

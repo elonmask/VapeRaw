@@ -140,6 +140,12 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(MainActivity.this, Help.class);
                             startActivity(intent);
                         }
+
+                        if (drawerItem.getIdentifier() == 7) {
+
+                            Intent intent = new Intent(MainActivity.this, Cataolg.class);
+                            startActivity(intent);
+                        }
                        return false;
                    }
                })

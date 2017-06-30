@@ -77,6 +77,12 @@ public class BucketActivity extends AppCompatActivity {
                             Intent intet = new Intent(BucketActivity.this, Help.class);
                             startActivity(intet);
                         }
+
+                        if (drawerItem.getIdentifier() == 7) {
+
+                            Intent intent = new Intent(BucketActivity.this, Cataolg.class);
+                            startActivity(intent);
+                        }
                         return false;
                     }
                 })
