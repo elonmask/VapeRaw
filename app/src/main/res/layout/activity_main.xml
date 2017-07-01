@@ -32,12 +32,17 @@
             android:dividerPadding="22dp"
             android:showDividers="middle">
 
-            <ImageView
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
+                android:layout_marginTop="65dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ff"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"/>
+                android:layout_height="200dp"
+                />
+            <ListView
+                android:layout_below="@+id/slider"
+                android:id="@+id/transformers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
 
             <TextView
                 android:id="@+id/textView"

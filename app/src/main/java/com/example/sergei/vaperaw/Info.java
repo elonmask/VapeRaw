@@ -28,6 +28,7 @@ public class Info extends AppCompatActivity {
     TextView t;
     TextView t2;
     TextView t3;
+    TextView t20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class Info extends AppCompatActivity {
         t = (TextView) findViewById(R.id.t);
         t2 = (TextView) findViewById(R.id.t2);
         t3 = (TextView) findViewById(R.id.t3);
+        t20 = (TextView) findViewById(R.id.t20);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar9);
         setSupportActionBar(toolbar);
@@ -101,6 +103,11 @@ public class Info extends AppCompatActivity {
                             Intent intent = new Intent(Info.this, Cataolg.class);
                             startActivity(intent);
                         }
+
+                        if (drawerItem.getIdentifier() == 8) {
+
+                            finishAffinity();
+                        }
                         return false;
                     }
                 })
@@ -141,6 +148,33 @@ public class Info extends AppCompatActivity {
                         .setCancelable(true);
                 AlertDialog alert = builder.create();
                 alert.show();
+            }
+        });
+
+        t20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Info.this);
+                builder.setTitle("Доставка и оплата")
+                        .setMessage("\n" +
+                                "Наличный расчет с курьером при получении заказа.\n" +
+                                "На карту Приватбанка: сумма заказа + комиссия, которая обычно составляет 1% от общей суммы.\n" +
+                                "Оплата наложенного платежа при доставке Новой Почтой\n" +
+                                " \n" +
+                                " \n" +
+
+                                "Курьерская служба доставит ваш заказ в течении 1-2 дней после его подтверждения.\n" +
+                                "В рабочие дни с 10:00 до 20:00.\n" +
+                                "Доставка заказов осуществляется через транспортную компанию «Новая Почта».\n" +
+                                "\u200B\n" +
+                                "Стоимость доставки в пределах г. Киева:\n" +
+                                "заказ до 299 грн — 35 грн;\n" +
+                                "заказ от 300 грн — бесплатно.")
+                        .setCancelable(true);
+                AlertDialog alert = builder.create();
+                alert.show();
+
             }
         });
 

@@ -37,6 +37,8 @@ public class Search extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        setTitle("");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar11);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -98,6 +100,11 @@ public class Search extends AppCompatActivity {
 
                             Intent intent = new Intent(Search.this, Cataolg.class);
                             startActivity(intent);
+                        }
+
+                        if (drawerItem.getIdentifier() == 8) {
+
+                            finishAffinity();
                         }
                         return false;
                     }

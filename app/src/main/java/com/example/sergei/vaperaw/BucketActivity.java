@@ -83,6 +83,11 @@ public class BucketActivity extends AppCompatActivity {
                             Intent intent = new Intent(BucketActivity.this, Cataolg.class);
                             startActivity(intent);
                         }
+
+                        if (drawerItem.getIdentifier() == 8) {
+
+                            finishAffinity();
+                        }
                         return false;
                     }
                 })

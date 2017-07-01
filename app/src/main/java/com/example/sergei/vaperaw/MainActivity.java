@@ -12,6 +12,7 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,9 +20,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -40,9 +47,11 @@ import org.w3c.dom.Text;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
     private Drawer result = null;
+
+    private SliderLayout slider;
 
     ImageView view3;
     ImageView view4;
@@ -70,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("Главная");
 
+        slider = (SliderLayout) findViewById(R.id.slider);
+
         view3 = (ImageView) findViewById(R.id.imageView3);
         view4 = (ImageView) findViewById(R.id.imageView4);
         view5 = (ImageView) findViewById(R.id.imageView5);
@@ -77,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
         view7 = (ImageView) findViewById(R.id.imageView7);
 
         button2 = (Button) findViewById(R.id.button2);
-        button = (Button) findViewById( R.id.button);
-        button3 = (Button)findViewById(R.id.button3);
+        button = (Button) findViewById(R.id.button);
+        button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
         button33 = (Button) findViewById(R.id.button33);
         button44 = (Button) findViewById(R.id.button44);
@@ -111,24 +122,24 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName("Выход").withIcon(FontAwesome.Icon.faw_sign_out).withIdentifier(8)
                 )
 
-               .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                   @Override
-                   public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    @Override
+                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
-                       if (drawerItem.getIdentifier() == 3) {
+                        if (drawerItem.getIdentifier() == 3) {
 
-                           //Открыть козрину
-                           Intent intent = new Intent(MainActivity.this, BucketActivity.class);
-                           startActivity(intent);
-                       }
+                            //Открыть козрину
+                            Intent intent = new Intent(MainActivity.this, BucketActivity.class);
+                            startActivity(intent);
+                        }
 
-                       if (drawerItem.getIdentifier() == 4){
+                        if (drawerItem.getIdentifier() == 4) {
 
-                           Intent intent = new Intent(MainActivity.this, Contacts.class);
-                           startActivity(intent);
-                       }
+                            Intent intent = new Intent(MainActivity.this, Contacts.class);
+                            startActivity(intent);
+                        }
 
-                        if (drawerItem.getIdentifier() == 5){
+                        if (drawerItem.getIdentifier() == 5) {
 
                             //Показать информацию
                             Intent intent = new Intent(MainActivity.this, Info.class);
@@ -146,9 +157,14 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(MainActivity.this, Cataolg.class);
                             startActivity(intent);
                         }
-                       return false;
-                   }
-               })
+
+                        if (drawerItem.getIdentifier() == 8) {
+
+                            finishAffinity();
+                        }
+                        return false;
+                    }
+                })
                 .build();
 
         view3.setOnClickListener(new View.OnClickListener() {
@@ -275,40 +291,102 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,Contacts.class);
+                Intent intent = new Intent(MainActivity.this, Contacts.class);
                 startActivity(intent);
+            }
+        });
+
+        HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
+        file_maps.put("Покупай на vaperaw.com", R.drawable.gg);
+        file_maps.put("Cкидки на всю продукцию Dr. Vaper", R.drawable.ff);
+        file_maps.put("Dr. Vaper Sale", R.drawable.off);
+
+        for (String name : file_maps.keySet()) {
+            TextSliderView textSliderView = new TextSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .description(name)
+                    .image(file_maps.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
+
+            //add your extra information
+            textSliderView.bundle(new Bundle());
+            textSliderView.getBundle()
+                    .putString("extra", name);
+
+            slider.addSlider(textSliderView);
+        }
+
+        slider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        slider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        slider.setCustomAnimation(new DescriptionAnimation());
+        slider.setDuration(4000);
+        slider.addOnPageChangeListener(this);
+        ListView l = (ListView) findViewById(R.id.transformers);
+        l.setAdapter(new TransformerAdapter(this));
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                slider.setPresetTransformer(((TextView) view).getText().toString());
+                Toast.makeText(MainActivity.this, ((TextView) view).getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-
-        return true;
+    protected void onStop() {
+        // To prevent a memory leak on rotation, make sure to call stopAutoCycle() on the slider before activity or fragment is destroyed
+        slider.stopAutoCycle();
+        super.onStop();
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public void onSliderClick(BaseSliderView slider) {
 
-        switch (item.getItemId()){
+        Intent intent = new Intent(MainActivity.this, Loading.class);
+        startActivity(intent);
+    }
 
-            case R.id.search2:
+        @Override
+        public boolean onCreateOptionsMenu (Menu menu){
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.menu, menu);
 
-                Intent intent = new Intent(MainActivity.this, Search.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.basket:
-
-                Intent intent1 = new Intent(MainActivity.this, BucketActivity.class);
-                startActivity(intent1);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+            return true;
         }
 
+        @Override
+        public boolean onOptionsItemSelected (MenuItem item){
+
+            switch (item.getItemId()) {
+
+                case R.id.search2:
+
+                    Intent intent = new Intent(MainActivity.this, Loading.class);
+                    startActivity(intent);
+                    return true;
+
+                case R.id.basket:
+
+                    Intent intent1 = new Intent(MainActivity.this, BucketActivity.class);
+                    startActivity(intent1);
+                    return true;
+
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+
+        }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+    @Override
+    public void onPageSelected(int position) {
+        Log.d("Slider Demo", "Page Changed: " + position);
     }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {}
 }

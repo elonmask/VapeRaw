@@ -95,6 +95,11 @@ public class Contacts extends AppCompatActivity {
                             Intent intent = new Intent(Contacts.this, Cataolg.class);
                             startActivity(intent);
                         }
+
+                        if (drawerItem.getIdentifier() == 8) {
+
+                            finishAffinity();
+                        }
                         return false;
                     }
                 })

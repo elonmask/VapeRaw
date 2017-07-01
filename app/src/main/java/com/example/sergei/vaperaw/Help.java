@@ -88,6 +88,11 @@ public class Help extends AppCompatActivity {
                             Intent intent = new Intent(Help.this, Cataolg.class);
                             startActivity(intent);
                         }
+
+                        if (drawerItem.getIdentifier() == 8) {
+
+                            finishAffinity();
+                        }
                         return false;
                     }
                 })
@@ -106,6 +111,12 @@ public class Help extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
+
+            case R.id.search2:
+
+                Intent intent = new Intent(Help.this, Loading.class);
+                startActivity(intent);
+                return true;
 
             case R.id.basket:
 
