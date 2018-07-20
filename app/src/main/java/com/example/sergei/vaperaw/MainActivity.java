@@ -318,7 +318,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             slider.addSlider(textSliderView);
         }
 
-        slider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        slider.setPresetTransformer(SliderLayout.Transformer.Default);
         slider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         slider.setCustomAnimation(new DescriptionAnimation());
         slider.setDuration(4000);

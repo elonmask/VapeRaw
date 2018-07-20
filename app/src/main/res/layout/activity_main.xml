@@ -203,7 +203,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
-                    android:background="#ffffff">
+                    android:paddingBottom="5dp"
+                    android:background="#ffffff"
+                    android:elevation="5dp">
 
                     <TextView
                         android:id="@+id/textViewFirst"
@@ -248,7 +250,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="15dp"
-                    android:background="#ffffff">
+                    android:background="#ffffff"
+                    android:elevation="5dp">
 
                     <TextView
                         android:id="@+id/textView4"
@@ -300,7 +303,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
-                    android:background="#ffffff">
+                    android:background="#ffffff"
+                    android:elevation="5dp">
 
                     <TextView
                         android:id="@+id/textView24"
@@ -346,6 +350,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="15dp"
+                    android:elevation="5dp"
                     android:background="#ffffff">
 
                     <TextView
@@ -426,6 +431,7 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
+                    android:elevation="5dp"
                     android:layout_marginTop="15dp"
                     android:background="#ffffff">
 
@@ -471,6 +477,7 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="25dp"
+                    android:elevation="5dp"
                     android:layout_marginTop="15dp"
                     android:background="#ffffff">
 
@@ -550,6 +557,7 @@
                 <RelativeLayout
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
+                    android:elevation="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     android:background="#ffffff">
@@ -597,6 +605,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="15dp"
+                    android:elevation="15dp"
                     android:background="#ffffff">
 
                     <TextView
@@ -649,6 +658,7 @@
                     android:text="Консультация по телефону"
                     android:layout_margin="10dp"
                     android:background="@color/blue"
+                    android:elevation="50dp"
                     android:textAllCaps="false"/>
 
             </LinearLayout>
